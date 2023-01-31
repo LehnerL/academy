@@ -1,0 +1,12 @@
+add_student {"id":"111111888","toar":"MA","city":"RG","name":"Yossi"} saveas st1
+
+get_students {"toar":"MA"}
+
+update_student {"id":"<_id>","update":{"id":"000000001","name":"Menashe","toar":"PHD","city":"TLV"}}
+
+add_course {"id":"<_id>","courses":{"cid":"00001","grade":99}}
+
+del_student <_id>
+
+del_all
+

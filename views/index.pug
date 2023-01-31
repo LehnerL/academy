@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  form(method='GET')
+    #form-group
+      label EDUCATION:
+      select.form-control(name='toar', type='text')
+         option(value="")  #{''}
+         option(value="BA")  #{'BA'}
+         option(value="MA")  #{'MA'}
+         option(value="PHD") #{'PHD'}
+    #form-group
+      label CITY:
+      input.form-control(name='city', type='text')
+    #form-group
+      label AVG. GRADE:
+      input.form-control(name='avg', type='number')
+    br
+    input.btn.btn-primary(type='submit',value='Submit')
+    br
+
+  h1 #{title}
+  ul.list-group
+    each student, i in students
+      li.list-group-item
+        a(href="/students/"+student._id)= student.id

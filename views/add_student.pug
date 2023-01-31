@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  if student
+    h1 #{title}
+    form(method='POST', action='/students/add')
+      #form-group
+        label ID:
+        input.form-control(name='id', type='text', value=student.id)
+      #form-group
+        label NAME:
+        input.form-control(name='name', type='text', value=student.name)
+      #form-group
+        label EDUCATION:
+        select.form-control(name='toar', type='text')
+          option(value=student.toar)  #{student.toar}
+          option(value="BA")  #{'BA'}
+          option(value="MA")  #{'MA'}
+          option(value="PHD") #{'PHD'}    
+      #form-group
+        label CITY:
+        input.form-control(name='city', type='text', value=student.city)
+      br
+      input.btn.btn-primary(type='submit',value='Submit')
+    br
+    if student 
+      p=msg
+
+  else
+    h1 #{title}
+    form(method='POST', action='/students/add')
+      #form-group
+        label ID:
+        input.form-control(name='id', type='text')
+      #form-group
+        label NAME:
+        input.form-control(name='name', type='text')
+      #form-group
+        label EDUCATION:
+        select.form-control(name='toar', type='text')
+          option(value="")  #{''}
+          option(value="BA")  #{'BA'}
+          option(value="MA")  #{'MA'}
+          option(value="PHD") #{'PHD'}    
+      #form-group
+        label CITY:
+        input.form-control(name='city', type='text')
+      br
+      input.btn.btn-primary(type='submit',value='Submit')
+    br
+    if student 
+      p=msg

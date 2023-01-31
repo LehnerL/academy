@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/students/update/'+students._id)
+    #form-group
+      label ID:
+      input.form-control(name='id', type='text', value=students.id, readonly)
+    #form-group
+      label NAME:
+      input.form-control(name='name', type='text', value=students.name)
+    #form-group
+      label EDUCATION:
+      select.form-control(name='toar', type='text')
+         option(value=students.toar)  #{students.toar}
+         option(value="BA")  #{'BA'}
+         option(value="MA")  #{'MA'}
+         option(value="PHD") #{'PHD'}    
+    #form-group
+      label CITY:
+      input.form-control(name='city', type='text', value=students.city)
+    br
+    input.btn.btn-primary(type='submit',value='Submit')
+    br
+  br
+  if students
+    p= msg
+  br
+  form(method='POST', action='/students/update/'+students._id+'/addcourse/')
+    label ADD COURSE:
+    br
+    #form-group
+      label cid:
+      input.form-control(name='cid', type='text')
+    #form-group
+      label grade:
+      input.form-control(name='grade', type='number')
+    br
+    input.btn.btn-primary(type='submit',value='Submit')
+    br
+  br
+  if courses
+    p= msg

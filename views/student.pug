@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  label ID:
+  p= students.id
+  label NAME:
+  p= students.name
+  label EDUCATION:
+  p= students.toar
+  label CITY:
+  p= students.city
+  label COURSES:
+  ul.list-group
+  each course in courses
+    li.list-group-item
+      label cid:
+      p=course.cid
+      label grade:
+      p=course.grade
+      br
+  br
+  a.btn.btn-default(href='/students/update/'+students._id) Edit 
+  a.btn.btn-danger.delete-article(href='#',data-id=students._id) Delete
